@@ -861,7 +861,7 @@ default:
 	} else {
 		// Some parts of this script use the main login form to display a message
 		if		( isset($_GET['loggedout']) && true == $_GET['loggedout'] )
-			$errors->add('loggedout', __('You are now logged out.'), 'message');
+			$errors->add('loggedout', __('You are now logged out. My god'), 'message');
 		elseif	( isset($_GET['registration']) && 'disabled' == $_GET['registration'] )
 			$errors->add('registerdisabled', __('User registration is currently not allowed.'));
 		elseif	( isset($_GET['checkemail']) && 'confirm' == $_GET['checkemail'] )
