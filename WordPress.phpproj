@@ -523,6 +523,8 @@
     <Compile Include="wp-admin\widgets.php" />
     <Compile Include="wp-content\plugins\hello.php" />
     <Compile Include="wp-content\plugins\index.php" />
+    <Compile Include="wp-content\plugins\learning-api\lib\class-wp-learning-rest-api-controller.php" />
+    <Compile Include="wp-content\plugins\learning-api\lib\class-wp-learning-rest-api-courses-controller.php" />
     <Compile Include="wp-content\plugins\learning-api\plugin.php" />
     <Compile Include="wp-content\plugins\rest-api\core-integration.php" />
     <Compile Include="wp-content\plugins\rest-api\extras.php" />
@@ -1652,6 +1654,7 @@
     <Folder Include="wp-admin" />
     <Folder Include="wp-content\plugins" />
     <Folder Include="wp-content\plugins\learning-api\" />
+    <Folder Include="wp-content\plugins\learning-api\lib\" />
     <Folder Include="wp-content\plugins\rest-api\" />
     <Folder Include="wp-content\plugins\rest-api\lib\" />
     <Folder Include="wp-content\plugins\rest-api\lib\endpoints\" />
