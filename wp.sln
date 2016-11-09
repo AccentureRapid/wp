@@ -3,21 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{1863889A-00DF-4350-BA39-669CA949CB81}") = "wp", "wp.phpproj", "{77538800-D193-4DE8-9313-CAAA24F8643D}"
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "WordPress", "WordPress.phpproj", "{C1164857-0F49-4853-911A-915603180D77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Local|PHP 5.5 = Local|PHP 5.5
-		Production|PHP 5.5 = Production|PHP 5.5
-		Staging|PHP 5.5 = Staging|PHP 5.5
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Local|PHP 5.5.ActiveCfg = Local|PHP 5.5
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Local|PHP 5.5.Deploy.0 = Local|PHP 5.5
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Production|PHP 5.5.ActiveCfg = Production|PHP 5.5
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Production|PHP 5.5.Deploy.0 = Production|PHP 5.5
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Staging|PHP 5.5.ActiveCfg = Staging|PHP 5.5
-		{77538800-D193-4DE8-9313-CAAA24F8643D}.Staging|PHP 5.5.Deploy.0 = Staging|PHP 5.5
+		{C1164857-0F49-4853-911A-915603180D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1164857-0F49-4853-911A-915603180D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
