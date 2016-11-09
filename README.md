@@ -6,8 +6,8 @@ You can use rest api by activating the rest api plugin on admin dashboard.
 <br>
 base url is 
 
-    http://localhost:(port)/wp/wp-json/
+    http://localhost:(port)/wp/wp-json/wp/v2
 
 for example, you want to get all post, and your port is **9096**, the url will be
 
-    http://localhost:9096/wp/wp-json/posts
+    http://localhost:9096/wp/wp-json/wp/v2/posts
