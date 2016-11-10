@@ -38,7 +38,7 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 	function create_initial_rest_routes() {
 
 	
-		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
+		$controller = new WP_Learning_REST_API_Courses_Controller();
  		$controller->register_routes();
 		register_rest_route_test();
 
