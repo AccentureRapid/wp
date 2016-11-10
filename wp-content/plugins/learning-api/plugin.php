@@ -38,25 +38,38 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 	function create_initial_rest_routes() {
 
 	
-		$controller = new WP_Learning_REST_API_Courses_Controller( ¡®test¡¯ );
+		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
+ 		$controller->register_routes();
 		
+		register_rest_route_test();
 		
-		$controller->register_routes();
+		//TODO all the subclass need to be registered.
 		
-// 		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
-// 			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
+		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
+			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
 
-// 			if ( ! class_exists( $class ) ) {
-// 				continue;
-// 			}
-// 			$controller = new $class( $post_type->name );
-// 			if ( ! is_subclass_of( $controller, 'WP_Learning_REST_API_Controller' ) ) {
-// 				continue;
-// 			}
+			if ( ! class_exists( $class ) ) {
+				continue;
+			}
+			$controller = new $class( $post_type->name );
+			if ( ! is_subclass_of( $controller, 'WP_Learning_REST_API_Controller' ) ) {
+				continue;
+			}
 
-// 			$controller->register_routes();
-// 		}
+			$controller->register_routes();
+		}
 	}
+}
+
+function register_rest_route_test() {
+	register_rest_route( 'wp/v2', '/author/(?P<id>\d+)', array(
+	'methods' => 'GET',
+	'callback' => 'my_awesome_func',
+	) );
+}
+function my_awesome_func() {
+	$test = get_post_types( array( 'show_in_rest' => true ), 'objects' );
+	return $test;
 }
 function learning_api_install() {
 	global $wpdb;
