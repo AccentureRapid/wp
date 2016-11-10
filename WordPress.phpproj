@@ -523,6 +523,7 @@
     <Compile Include="wp-admin\widgets.php" />
     <Compile Include="wp-content\plugins\hello.php" />
     <Compile Include="wp-content\plugins\index.php" />
+    <Compile Include="wp-content\plugins\learning-api\core-integration.php" />
     <Compile Include="wp-content\plugins\learning-api\lib\class-wp-learning-rest-api-controller.php" />
     <Compile Include="wp-content\plugins\learning-api\lib\class-wp-learning-rest-api-courses-controller.php" />
     <Compile Include="wp-content\plugins\learning-api\plugin.php" />
