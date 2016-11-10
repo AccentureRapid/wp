@@ -39,11 +39,19 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 
 	
 		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
+<<<<<<< HEAD
  		$controller->register_routes();
+=======
+>>>>>>> 64061c8c554bdebfb6165deac9093c3dc0362687
 		
 		register_rest_route_test();
 		
+<<<<<<< HEAD
 		//TODO all the subclass need to be registered.
+=======
+		$controller->register_routes();
+		register_rest_route_test();
+>>>>>>> 64061c8c554bdebfb6165deac9093c3dc0362687
 		
 		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
 			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
@@ -68,8 +76,12 @@ function register_rest_route_test() {
 	) );
 }
 function my_awesome_func() {
+<<<<<<< HEAD
 	$test = get_post_types( array( 'show_in_rest' => true ), 'objects' );
 	return $test;
+=======
+	return null;
+>>>>>>> 64061c8c554bdebfb6165deac9093c3dc0362687
 }
 function learning_api_install() {
 	global $wpdb;
