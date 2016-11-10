@@ -88,4 +88,14 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 		$params['context']['default'] = 'view';
 		return $params;
 	}
+	
+	/**
+	 * Get the Post's schema, conforming to JSON Schema.
+	 *
+	 * @return array
+	 */
+	public function get_item_schema() {
+	
+		return null;
+	}
 }

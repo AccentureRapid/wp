@@ -37,19 +37,25 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
      */
 	function create_initial_rest_routes() {
 
-		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
-			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
+	
+		$controller = new WP_Learning_REST_API_Courses_Controller( ¡®test¡¯ );
+		
+		
+		$controller->register_routes();
+		
+// 		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
+// 			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
 
-			if ( ! class_exists( $class ) ) {
-				continue;
-			}
-			$controller = new $class( $post_type->name );
-			if ( ! is_subclass_of( $controller, 'WP_Learning_REST_API_Controller' ) ) {
-				continue;
-			}
+// 			if ( ! class_exists( $class ) ) {
+// 				continue;
+// 			}
+// 			$controller = new $class( $post_type->name );
+// 			if ( ! is_subclass_of( $controller, 'WP_Learning_REST_API_Controller' ) ) {
+// 				continue;
+// 			}
 
-			$controller->register_routes();
-		}
+// 			$controller->register_routes();
+// 		}
 	}
 }
 function learning_api_install() {
