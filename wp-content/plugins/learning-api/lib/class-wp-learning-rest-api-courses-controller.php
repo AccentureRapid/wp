@@ -53,7 +53,7 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 */
 	public function get_item_permissions_check( $request ) {
 
-		return true;
+		return false;
 	}
 
 
@@ -64,8 +64,8 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function get_item( $request ) {
-		
-		return new WP_Error(100,'test',null);
+		$response = new WP_REST_Response('1', 200, null);
+		return $response;
 	}
 
     /**

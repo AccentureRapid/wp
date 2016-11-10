@@ -23,6 +23,8 @@ if ( ! class_exists( 'WP_Learning_REST_API_Courses_Controller' ) ) {
 	require_once dirname( __FILE__ ) . '/lib/class-wp-learning-rest-api-courses-controller.php';
 }
 
+require_once( dirname( __FILE__ ) . '/core-integration.php' );
+
 add_action( 'rest_api_init', 'create_initial_rest_routes', 0 );
 
 register_activation_hook ( __FILE__, 'learning_api_install' );
@@ -38,7 +40,7 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 	function create_initial_rest_routes() {
 
 	
-		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
+		$controller = new WP_Learning_REST_API_Courses_Controller();
  		$controller->register_routes();
 		register_rest_route_test();
 
