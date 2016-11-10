@@ -40,11 +40,10 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 	
 		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
  		$controller->register_routes();
-		
 		register_rest_route_test();
-		
+
 		//TODO all the subclass need to be registered.
-		
+
 		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
 			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
 
@@ -68,8 +67,10 @@ function register_rest_route_test() {
 	) );
 }
 function my_awesome_func() {
+
 	$test = get_post_types( array( 'show_in_rest' => true ), 'objects' );
 	return $test;
+
 }
 function learning_api_install() {
 	global $wpdb;
