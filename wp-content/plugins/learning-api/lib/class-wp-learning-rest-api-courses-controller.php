@@ -52,6 +52,8 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 * @return WP_Error|boolean
 	 */
 	public function get_item_permissions_check( $request ) {
+        //TODO 
+
 
 		return false;
 	}
