@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @package Super Rocket
@@ -23,6 +24,8 @@ if ( ! class_exists( 'WP_Learning_REST_API_Courses_Controller' ) ) {
 	require_once dirname( __FILE__ ) . '/lib/class-wp-learning-rest-api-courses-controller.php';
 }
 
+require_once( dirname( __FILE__ ) . '/core-integration.php' );
+
 add_action( 'rest_api_init', 'create_initial_rest_routes', 0 );
 
 register_activation_hook ( __FILE__, 'learning_api_install' );
@@ -38,25 +41,11 @@ if ( ! function_exists( 'create_initial_rest_routes' ) ) {
 	function create_initial_rest_routes() {
 
 	
-		$controller = new WP_Learning_REST_API_Courses_Controller( 'Course' );
-		
-		
-		$controller->register_routes();
+		$controller = new WP_Learning_REST_API_Courses_Controller();
+ 		$controller->register_routes();
 		register_rest_route_test();
-		
-		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
-			$class = ! empty( $post_type->rest_controller_class ) ? $post_type->rest_controller_class : 'WP_Learning_REST_API_Courses_Controller';
 
-			if ( ! class_exists( $class ) ) {
-				continue;
-			}
-			$controller = new $class( $post_type->name );
-			if ( ! is_subclass_of( $controller, 'WP_Learning_REST_API_Controller' ) ) {
-				continue;
-			}
-
-			$controller->register_routes();
-		}
+		//TODO all the subclass need to be registered.
 	}
 }
 
@@ -67,7 +56,8 @@ function register_rest_route_test() {
 	) );
 }
 function my_awesome_func() {
-	return null;
+	return 1;
+
 }
 function learning_api_install() {
 	global $wpdb;
@@ -88,6 +78,5 @@ function learning_api_uninstall() {
 	$wpdb->query ($sql);
 }
 
-
-
 ?>
+

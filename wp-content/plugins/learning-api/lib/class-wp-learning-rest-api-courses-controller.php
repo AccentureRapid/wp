@@ -2,13 +2,9 @@
 
 class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Controller {
 
-	protected $post_type;
-
-	public function __construct( $post_type ) {
-		$this->post_type = $post_type;
+	public function __construct( ) {
 		$this->namespace = 'wp/v2';
-		$obj = get_post_type_object( $post_type );
-		$this->rest_base = ! empty( $obj->rest_base ) ? $obj->rest_base : $obj->name;
+		$this->rest_base = '/course/(?P<id>\d+)';
 	}
 
 	/**
@@ -35,12 +31,6 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 */
 	public function get_items_permissions_check( $request ) {
 
-		$post_type = get_post_type_object( $this->post_type );
-
-		if ( 'edit' === $request['context'] && ! current_user_can( $post_type->cap->edit_posts ) ) {
-			return new WP_Error( 'rest_forbidden_context', __( 'Sorry, you are not allowed to edit these posts in this post type' ), array( 'status' => rest_authorization_required_code() ) );
-		}
-
 		return true;
 	}
 
@@ -62,8 +52,10 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 * @return WP_Error|boolean
 	 */
 	public function get_item_permissions_check( $request ) {
+        //TODO 
 
-		return true;
+
+		return false;
 	}
 
 
@@ -74,8 +66,8 @@ class WP_Learning_REST_API_Courses_Controller extends WP_Learning_REST_API_Contr
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function get_item( $request ) {
-		
-		return null;
+		$response = new WP_REST_Response('1', 200, null);
+		return $response;
 	}
 
     /**
